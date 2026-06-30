@@ -5,38 +5,30 @@ import galeriaTenisColorido from "@/assets/images/galeria-tenis-colorido.jpg";
 import galeriaTenisBrancoPeto from "@/assets/images/galeria-tenis-branco-e-preto.jpg";
 import galeriaTenisCinza from "@/assets/images/galeria-tenis-cinza.jpg";
 import styles from "./Gallery.module.css";
+import { Overlay } from "../Overlay";
+import { Button } from "../Button";
 
 
 export const Gallery = () => {
     return (
-      
+
         <div className="container">
-          
+
             <div className={styles.galleryGrid}>
-               
+
                 <div className={`${styles.imageCard} ${styles.highlight}`}>
-                    <img
-                        src={galeriaHomem}
-                        alt="Krypton One - Estilo urbano com atitude"
-                    />
-                    <div className={styles.overlay}>
-                        <div className={styles.textContent}>
-                            <p className={styles.productName}>Krypton One</p>
-                            <p className={styles.productDescription}>
-                                Estilo urbano com atitude
-                            </p>
-                        </div>
-                        <div className={styles.buttonGroup}>
-                            <button className={styles.button}>Feminino</button>
-                            <button className={styles.button}>Masculino</button>
-                        </div>
-                    </div>
+                    <img src={galeriaHomem} alt="Krypton One - Estilo urbano com atitude"/>
+
+                    <Overlay title="Kripton One" subtitle="Estilo urbano com atitude"                     className="inset-0 justify-center">
+                        <Button variant="secondary">Feminino</Button>
+                        <Button variant="secondary">Masculino</Button>
+                    </Overlay>
                 </div>
 
                 <div className={`${styles.imageCard} ${styles.sneakerPurple}`}>
                     <img src={galeriaTenisRoxo} alt="Tênis Roxo" />
                 </div>
-                
+
                 <div className={`${styles.imageCard} ${styles.model}`}>
                     <img src={galeriaModelo} alt="Modelo Feminina" />
                 </div>
