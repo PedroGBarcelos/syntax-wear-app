@@ -7,9 +7,13 @@ import galeriaTenisCinza from "@/assets/images/galeria-tenis-cinza.jpg";
 import styles from "./Gallery.module.css";
 import { Overlay } from "../Overlay";
 import { Button } from "../Button";
+import { useRouter } from "@tanstack/react-router";
 
 
 export const Gallery = () => {
+
+    const router = useRouter();
+
     return (
 
         <div className="container">
@@ -17,11 +21,21 @@ export const Gallery = () => {
             <div className={styles.galleryGrid}>
 
                 <div className={`${styles.imageCard} ${styles.highlight}`}>
-                    <img src={galeriaHomem} alt="Krypton One - Estilo urbano com atitude"/>
+                    <img src={galeriaHomem} alt="Krypton One - Estilo urbano com atitude" />
 
-                    <Overlay title="Kripton One" subtitle="Estilo urbano com atitude"                     className="inset-0 justify-center">
-                        <Button variant="secondary">Feminino</Button>
-                        <Button variant="secondary">Masculino</Button>
+                    <Overlay title="Kripton One" subtitle="Estilo urbano com atitude" className="inset-0 justify-center">
+                        <Button variant="secondary" onClick={() => router.navigate({
+                            to: "/products/category/$category", params: { category: "Feminino" }
+                        })
+                        }>
+                            Feminino
+                        </Button>
+                        <Button variant="secondary" onClick={() => router.navigate({
+                            to: "/products/category/$category", params: { category: "Masculino" }
+                        })
+                        }>
+                            Masculino
+                        </Button>
                     </Overlay>
                 </div>
 
